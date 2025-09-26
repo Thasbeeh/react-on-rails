@@ -16,4 +16,4 @@ test:
 
 production:
   <<: *default
-  database: react_on_rails_production
+  url: <%= ENV['DATABASE_URL'] %>  # Use DATABASE_URL for Render
