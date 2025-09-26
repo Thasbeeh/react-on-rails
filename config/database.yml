@@ -17,3 +17,7 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>  # Use DATABASE_URL for Render
+
+cable:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
