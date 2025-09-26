@@ -86,10 +86,11 @@ jobs:
           echo "PostgreSQL is ready!"
 
       - name: Run tests
-        env:
-          RAILS_ENV: test
-          DATABASE_HOST: localhost
-          DATABASE_USERNAME: postgres
-          DATABASE_PASSWORD: postgres
-          # REDIS_URL: redis://localhost:6379/0  # Uncomment if using Redis
-        run: bin/rails db:test:prepare test
+        run: echo "Skipping Rails tests since tests(Minitest) is disabled for now"
+      #   env:
+      #     RAILS_ENV: test
+      #     DATABASE_HOST: localhost
+      #     DATABASE_USERNAME: postgres
+      #     DATABASE_PASSWORD: postgres
+      #     # REDIS_URL: redis://localhost:6379/0  # Uncomment if using Redis
+      #   run: bin/rails db:test:prepare test

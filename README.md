@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="./chatable/src/assets/appLogo.png" width="20%" alt="Header dark mode"/>
+</p>
+
+---
+
 # ReactOnRails
 
 A **real-time chat application** built with **React** (frontend) and **Ruby on Rails** (backend) leveraging **Action Cable/WebSocket** technology. This project demonstrates full-stack development expertise and modern real-time web application architecture.
@@ -76,6 +82,9 @@ rails server
 ```bash
 # Navigate to frontend directory
 cd chatable
+
+# Copy environment configuration
+cp .env.example .env.development
 
 # Install Node.js dependencies  
 npm install
