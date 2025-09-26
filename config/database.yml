@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  username: <%= ENV['DATABASE_USERNAME'] %>    # Fallback to local username for dev
+  password: <%= ENV['DATABASE_PASSWORD'] %>                 # Leave blank or set via ENV
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: react_on_rails_development
+
+test:
+  <<: *default
+  database: react_on_rails_test
+
+production:
+  <<: *default
+  database: react_on_rails_production

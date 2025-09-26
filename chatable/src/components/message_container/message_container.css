@@ -1,0 +1,76 @@
+.message_container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+  height: 100vh;
+}
+
+.msg_display {
+	overflow-y: auto;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 20px;
+}
+
+.message_input_pane {
+	height: 13%;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+  border-radius: 0 0 16px 16px;
+  padding-bottom: 5px;
+}
+
+.message_input_pane div {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.message_input_field {
+  height: 55%;
+	width: 80%;
+	border-radius: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+
+/* Message box styles */
+.message {
+  display: inline-block;
+  max-width: 70%;
+  margin: 8px 0;
+  padding: 10px 16px;
+  border-radius: 8px 8px 8px 0;
+  background: #075e54;
+  color: #fff;
+  font-size: 1.1em;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  word-break: break-word;
+}
+
+.message.right {
+  margin-left: auto;
+  background: #075e54;
+  border-radius: 8px 8px 0 8px;
+}
+
+.message.left {
+  margin-right: auto;
+  background: #262d31;
+  border-radius: 8px 8px 8px 0;
+}
+
+.no-messages {
+  display: flex;
+  justify-content: center;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}

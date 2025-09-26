@@ -1,0 +1,81 @@
+.left-pane {
+  width: 45%;
+  height: 100vh; /* Set height to trigger scrolling */
+  background: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-container {
+  background-color: rgba(135, 206, 250, 0.18);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin: 10px 10px;
+  padding: 1% 4%;
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  width: 20%;
+  height: auto; /* keeps aspect ratio */
+}
+
+.left-pane .scrollable-box {
+  overflow-y: auto; /* Enable vertical scroll */
+  padding: 10px 16px;
+  width: 90%;
+  color: #ffffff; /* Light text */
+}
+
+.left-pane .box-item {
+  font-size: 15px;
+}
+
+.avatar {
+  width: 40px;        /* small size */
+  height: 40px;       /* keep it square */
+  border-radius: 50%; /* makes it a circle */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2); /* optional shadow */
+  margin-right: 30px;
+}
+
+.user-item {
+  display: flex;
+  margin-top: 20px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding-left: 20px;
+  height: 50px;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.user-item:active {
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10) inset;
+}
+
+.user-item:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.search-user-field {
+  width: 95%;
+  height: 5%;
+}
+
+.search-user-field input {
+  width: -webkit-fill-available;
+  height: 90%;
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
