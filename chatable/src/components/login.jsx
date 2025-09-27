@@ -64,7 +64,12 @@ function LoginForm({ username, password, setUsername, setPassword, setIsSignUp, 
         sessionStorage.setItem('currentUser', JSON.stringify(response.data.user));
         navigate('/chats');
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        console.log(import.meta.env.VITE_API_URL)
+        console.log('Login failed. Please check your credentials.');
+      });
+
   };
 
   return (
