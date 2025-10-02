@@ -6,7 +6,7 @@ import LogOutUser from './log_out.jsx'
 
 function ListUser(props) {
   const [search, setSearch] = useState('');
-
+  const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
   const filteredUsers = props.users
     ? props.users.filter(user =>
         user.username.toLowerCase().includes(search.toLowerCase())
@@ -19,7 +19,7 @@ function ListUser(props) {
     <div className="left-pane">
       <div className="logo-container">
         <img  className="app-logo" src={appLogo} alt="App Logo" />
-        <LogOutUser />
+        <p>Hi, {currentUser.username}</p>
       </div>
       <div className="search-user-field">
         <input
@@ -36,6 +36,9 @@ function ListUser(props) {
             <div className="box-item">{user.username}</div>
           </div>
         ))}
+      </div>
+      <div className="logo-container user-panel">
+        <LogOutUser />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export default function MessageInput() {
   const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {
 			axios.post(`${import.meta.env.VITE_API_URL}/api/v1/messages`,
-				{ reciever_id: selectedUser.id, content: message },
+				{ receiver_id: selectedUser.id, content: message },
 				{ headers: { Authorization: `Bearer ${token}` } }
 			).then((response) => { console.log('Message sent', response.data) }
 			).catch((error) => { console.error('Error sending message', error) });

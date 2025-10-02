@@ -74,3 +74,11 @@
   text-align: center;
   margin-top: 20px;
 }
+
+.read-receipt-tick {
+  margin-left: 5px;
+  font-size: 0.85rem; /* smaller than message text */
+  color: #4fc3f7;     /* light blue like WhatsApp */
+  vertical-align: middle;
+}
+
