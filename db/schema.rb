@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_20_101735) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_01_074935) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -22,11 +22,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_20_101735) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "sender_id"
-    t.integer "reciever_id"
+    t.integer "receiver_id"
     t.text "content"
     t.datetime "send_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "seen", default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|
