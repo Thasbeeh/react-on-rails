@@ -1,20 +1,22 @@
 class Api::V1::MessagesController < ApplicationController
   def index
-    user_messages = Message.between_users(@current_user, params[:user_id])
-    render json: { user_messages: user_messages }
+    conversation = Conversation.between_users(@current_user.id, params[:user_id].to_i).first
+    render json: {
+      conversation_id: conversation&.id,
+      conversation_messages: conversation&.messages&.order(:created_at) || []
+    }
   end
 
   def create
-    message = Message.new(
+    user1_id, user2_id = [ @current_user.id, params[:receiver_id].to_i ].sort
+    conversation = Conversation.find_or_create_by!(user1_id: user1_id, user2_id: user2_id)
+
+    message = conversation.messages.new(
       sender_id: @current_user.id,
-      receiver_id: params[:receiver_id],
       content: params[:content],
-      send_at: Time.current
     )
     if message.save
-      receiver = User.find(message.receiver_id)
-      ChatChannel.broadcast_to(@current_user, message: message.as_json)
-      ChatChannel.broadcast_to(receiver, message: message.as_json)
+      ChatChannel.broadcast_to("conversation_#{conversation.id}", message: message.as_json)
       render json: { status: "Message sent successfully" }, status: :ok
     else
       render json: { error: "Failed to send message" }, status: :unprocessable_entity

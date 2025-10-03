@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useRef } from 'react'
 import ListUsers from './left_pane/list_users'
 import MessageContainer from './message_container/message_container'
 import './chats.css'
@@ -9,6 +9,7 @@ function Chats() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [messages, setMessages] = useState('');
   const token = sessionStorage.getItem('token');
+  const conversationIdRef = useRef(null);
   
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_URL}/api/v1/users`, {
@@ -20,14 +21,17 @@ function Chats() {
     if (selectedUser) {
       axios.get(`${import.meta.env.VITE_API_URL}/api/v1/messages?user_id=${selectedUser.id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
-      }).then(response => setMessages(response.data.user_messages))
+      }).then(response => {
+        setMessages(response.data.conversation_messages);
+        conversationIdRef.current = response.data.conversation_id;
+      })
     }
   }, [selectedUser, token]);
   
   return (
     <div className="main_container">
       <ListUsers users={users} onUserClick={setSelectedUser}/>
-      <targetUserMessageContext.Provider value={{ messages , setMessages, selectedUser }}>
+      <targetUserMessageContext.Provider value={{ messages , setMessages, selectedUser, conversationIdRef }}>
         <MessageContainer />  
       </targetUserMessageContext.Provider>
     </div>

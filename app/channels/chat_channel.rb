@@ -1,10 +1,10 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    stream_for User.find(params[:user_id])
+    conversation = Conversation.find(params[:conversation_id])
+    stream_from "chat:conversation_#{conversation.id}"
   end
 
   def receive(data)
-    binding.pry
   end
 
   def message_seen(data)
@@ -12,8 +12,7 @@ class ChatChannel < ApplicationCable::Channel
     return unless message
 
     message.update(seen: true)
-    sender = User.find(message.sender_id)
-    broadcast_to(sender, message: { id: message.id, seen: message.seen })
+    broadcast_to("conversation_#{message.conversation_id}", message: { id: message.id, seen: message.seen })
   end
 
   def unsubscribed

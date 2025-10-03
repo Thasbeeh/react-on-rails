@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
   skip_before_action :authenticate_user, only: :create
 
   def index
-    @users = User.all
+    @users = User.where.not(id: @current_user)
     render json: @users, status: :ok
   end
 

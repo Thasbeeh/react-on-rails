@@ -12,7 +12,11 @@ export default function MessageInput() {
 		if (event.key === 'Enter') {
 			axios.post(`${import.meta.env.VITE_API_URL}/api/v1/messages`,
 				{ receiver_id: selectedUser.id, content: message },
-				{ headers: { Authorization: `Bearer ${token}` } }
+				{ headers: { Authorization: `Bearer ${token}`,
+										 "Content-Type": "application/json",
+										 "Accept": "application/json"
+									 }
+				}
 			).then((response) => { console.log('Message sent', response.data) }
 			).catch((error) => { console.error('Error sending message', error) });
 			setMessage('');
