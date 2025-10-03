@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post "login", to: "authentication#login"
-      resources :chats, only: %i[index create]
       resources :users, only: %i[index create]
       resources :messages
     end
