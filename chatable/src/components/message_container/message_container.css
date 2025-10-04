@@ -21,7 +21,6 @@
 	justify-content: center;
 	align-items: center;
   border-radius: 0 0 16px 16px;
-  padding-bottom: 5px;
 }
 
 .message_input_pane div {
@@ -29,6 +28,7 @@
   height: 80%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .message_input_field {
@@ -39,8 +39,6 @@
 	padding-right: 40px;
 }
 
-
-/* Message box styles */
 .message {
   display: inline-block;
   max-width: 70%;
@@ -82,3 +80,15 @@
   vertical-align: middle;
 }
 
+@media (max-width: 480px) {
+  .message {
+    padding: 4px 8px;
+    font-size: 0.7em;
+  }
+
+  .message_input_field {
+    height: 35%;
+    padding: 0 10px 0;
+    font-size: 0.7em;
+  }
+}
