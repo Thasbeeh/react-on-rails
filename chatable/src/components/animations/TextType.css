@@ -1,0 +1,23 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+.text-type__content {
+  display: inline;
+}
+
+.text-type__cursor {
+  display: inline-block;
+  margin-left: 0.1rem;   /* adjust spacing */
+  opacity: 1;
+  font-weight: bold;
+  color: white;        /* green underscore */
+  transition: opacity 0.1s ease-in-out;
+}
+
+.text-type__cursor--hidden {
+  opacity: 0;
+}
+

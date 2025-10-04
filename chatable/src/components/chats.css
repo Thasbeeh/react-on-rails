@@ -1,39 +1,63 @@
+/* ---------------- BASE STYLES ---------------- */
 .main_container {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
 }
 
-.login-page{
-	display: flex;
-	width: 100vw;
-	height: 100vh;
-	justify-content: center;
+.login-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+  background: #111827;
+  overflow-x: hidden;
+}
+
+.row-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
+  flex-direction: row;
+  height: 90%;
+  padding-top: 7%;
 }
 
-.login-page .left-half,
-.login-page .right-half{
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.left-half,
+.right-half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-half {
+  padding-left: 2%;
+}
+
+.right-half {
+  padding-right: 2%;
 }
 
 .left-half img {
-	margin-left: 15%;
-	width: 70%;
-	height: auto;
+  width: 50%;
+  height: auto;
+  max-width: 250px;
 }
 
-.left-half p{
-	margin-left: 15%;
-	text-align: justify;
+.left-half p {
+  text-align: justify;
+  line-height: 1.5;
+  max-width: 400px;
+  color: #d1d5db;
 }
 
 .login-form-container {
-	background: #1f2937;
+  background: #1f2937;
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
@@ -45,8 +69,8 @@ form {
   margin-bottom: 10%;
 }
 
-form input{
-	width: -webkit-fill-available;
+form input {
+  width: -webkit-fill-available;
   padding: 12px;
   margin: 10px 0;
   border: none;
@@ -60,12 +84,12 @@ form input{
 
 form input:focus {
   background: #374151;
-  border: 1px solid #61dafb; /* React blue */
+  border: 1px solid #61dafb;
   box-shadow: 0 0 8px rgba(97, 218, 251, 0.6);
 }
 
 .login-form-container button {
-  width: 100%;
+  width: -webkit-fill-available;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -86,14 +110,123 @@ form input:focus {
   box-shadow: 0 6px 18px rgba(45, 45, 45, 0.4);
 }
 
-/* Passive button */
 .secondaryButtonColor {
   margin-top: 7%;
-  background: linear-gradient(135deg, #339ab4, #1c222a); /* gray tones */
+  background: linear-gradient(135deg, #339ab4, #1c222a);
 }
 
 .secondaryButtonColor:hover {
-  background: linear-gradient(135deg, #339ab4, #1c222a);
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  color: #9ca3af;
+  font-size: 0.7rem;
+  height: 10%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+footer a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+/* ---------------- MOBILE / TABLET ---------------- */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+
+  .row-container {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+
+  .left-half,
+  .right-half {
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .left-half img {
+    width: 60%;
+    max-width: 220px;
+    margin-bottom: 10px;
+  }
+
+  .left-half p {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .login-form-container {
+    width: 85%;
+    max-width: 350px;
+    padding: 1.5rem;
+    margin-top: 20px;
+  }
+
+  form input {
+    padding: 10px;
+  }
+
+  .primaryButtonColor,
+  .secondaryButtonColor {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+/* ---------------- EXTRA SMALL SCREENS (<480px) ---------------- */
+@media (max-width: 480px) {
+  .row-container {
+    gap: 0;
+  }
+
+  .left-half img {
+    width: 50%;
+    max-width: 180px;
+  }
+
+  .left-half p {
+    font-size: 0.85rem;
+  }
+
+  .login-form-container {
+    width: 70%;
+    padding: 1rem;
+  }
+
+  .login-form-container button{
+    padding: 5px;
+    font-size: 0.7em;
+  }
+
+  form input {
+    font-size: 0.7rem;
+    padding: 8px;
+    width: -webkit-fill-available;
+  }
+
+  .primaryButtonColor,
+  .secondaryButtonColor {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.65rem;
+  }
 }

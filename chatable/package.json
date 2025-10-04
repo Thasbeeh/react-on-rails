@@ -14,6 +14,7 @@
     "@chatscope/chat-ui-kit-styles": "^1.4.0",
     "@rails/actioncable": "^8.0.200",
     "axios": "^1.10.0",
+    "gsap": "^3.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-intersection-observer": "^9.16.0",

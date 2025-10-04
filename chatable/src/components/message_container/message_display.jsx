@@ -42,7 +42,6 @@ export default function MessageDisplay() {
   const subscriptionRef = useRef(null);
   const { messages, setMessages, selectedUser, conversationIdRef } = useContext(targetUserMessageContext);
   const hasMessages = messages?.length > 0;
-	debugger
 
   const handleSeen = useCallback((messageId) => {
     if (!messageId || !subscriptionRef.current) return;
