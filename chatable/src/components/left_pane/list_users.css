@@ -87,12 +87,17 @@
   padding-right: 20px;
 }
 
-.logo-container .user-panel {
-  background-color: rgba(135, 206, 250, 0.18);
-  margin-top: auto;
+.user-panel {
+  margin-bottom: 17%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 480px) {
+
+  .logo-container {
+    height: 5%;
+  }
+
   .my-text {
     font-size: 0.1em;
   }
@@ -118,5 +123,9 @@
     width: 20px;        /* small size */
     height: 20px;       /* keep it square */
     margin-right: 10px;
+  }
+
+  .user-panel {
+    margin-bottom: 26%;
   }
 }
