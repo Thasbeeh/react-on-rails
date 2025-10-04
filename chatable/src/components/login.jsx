@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import appLogo from '../assets/appLogo.png';
-import ScrambledText from './animations/ScrambledText';
+import ShinyText from './animations/ShinyText';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -17,18 +17,19 @@ function Login() {
       <div className='row-container'>
         <div className="left-half">
           <img src={appLogo} alt="App Logo" />
-          <ScrambledText
-            className="scrambled-text"
-            radius={50}
-            duration={1.2}
-            speed={0.5}
-            scrambleChars=".:"
-          >
-            Instant messages that just work: <br />
-            React frontend magic meets <br />
-            Rails backend reliability, <br />
-            via ActionCable.
-          </ScrambledText>
+          <ShinyText
+            text={
+              <>
+                Instant messages that just work: <br />
+                React frontend magic meets <br />
+                Rails backend reliability, <br />
+                via ActionCable.
+              </>
+            }
+            disabled={false}
+            speed={3}
+            className='shiny-text-custom'
+          />
         </div>
         <div className="right-half">
           {isSignUp ? (
@@ -122,7 +123,7 @@ function SignUpForm({ username, email, password, passwordConfirmation, setPasswo
     <>
       <div className="login-form-container">
         <form onSubmit={handleSignUp}>
-          <input type="text" value={username} placeholder="User name" onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" className="login-username" value={username} placeholder="User name" onChange={(e) => setUsername(e.target.value)} />
           <br />
           <input type="text" value={email} placeholder="Email Address" onChange={(e) => setEmail(e.target.value)} />
           <br />
