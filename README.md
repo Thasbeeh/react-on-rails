@@ -8,6 +8,8 @@
 
 A **real-time chat application** built with **React** (frontend) and **Ruby on Rails** (backend) leveraging **Action Cable/WebSocket** technology. This project demonstrates full-stack development expertise and modern real-time web application architecture.
 
+Live at: <a href="https://example.com" target="_blank">Try it live!</a>
+
 ## 🚀 Project Overview
 
 ReactOnRails showcases seamless integration between a React frontend and Rails API backend, powered by WebSocket technology for instant messaging. Originally started as "chat-app-first" during development, it evolved into a comprehensive demonstration of modern web development practices and real-time communication patterns.
