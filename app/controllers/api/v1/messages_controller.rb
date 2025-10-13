@@ -9,7 +9,8 @@ class Api::V1::MessagesController < ApplicationController
 
   def create
     user1_id, user2_id = [ @current_user.id, params[:receiver_id].to_i ].sort
-    conversation = Conversation.find_or_create_by!(user1_id: user1_id, user2_id: user2_id)
+    conversation = Conversation.find_by(user1_id: user1_id, user2_id: user2_id)
+    conversation ||= Conversation.create!(user1_id: user1_id, user2_id: user2_id)
 
     message = conversation.messages.new(
       sender_id: @current_user.id,
