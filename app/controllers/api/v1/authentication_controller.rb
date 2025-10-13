@@ -3,7 +3,7 @@ class Api::V1::AuthenticationController < ApplicationController
 
   # POST /auth/login
   def login
-    @user = User.find_by_username(params[:user][:username])
+    @user = User.find_by(username: params[:user][:username])
     if @user&.authenticate(params[:user][:password])
       token = jwt_encode(user_id: @user.id)
       time = Time.now + 24.hours.to_i
