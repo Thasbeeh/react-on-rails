@@ -88,4 +88,6 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = [
     "https://react-on-rails-7y0y.onrender.com"
   ]
+
+  config.logger = ActiveSupport::Logger.new(Rails.root.join("log/production.log"))
 end
