@@ -6,12 +6,12 @@ import { targetUserMessageContext } from '../chats'
 export default function MessageInput() {
   const [message, setMessage] = useState('');
   const token = sessionStorage.getItem('token');
-	const { selectedUser } = useContext(targetUserMessageContext);
+	const { conversationIdRef } = useContext(targetUserMessageContext);
 	
   const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {
 			axios.post(`${import.meta.env.VITE_API_URL}/api/v1/messages`,
-				{ receiver_id: selectedUser.id, content: message },
+				{ conversation_id: conversationIdRef.current, content: message },
 				{ headers: { Authorization: `Bearer ${token}`,
 										 "Content-Type": "application/json",
 										 "Accept": "application/json"
