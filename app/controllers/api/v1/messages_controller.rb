@@ -17,6 +17,8 @@ class Api::V1::MessagesController < ApplicationController
       content: params[:content],
     )
     if message.save
+      Rails.logger.info "Conversation ---> #{conversation}"
+      Rails.logger.info "Conversation id ---> #{conversation.id}"
       ChatChannel.broadcast_to("conversation_#{conversation.id}", message: message.as_json)
       render json: { status: "Message sent successfully" }, status: :ok
     else
