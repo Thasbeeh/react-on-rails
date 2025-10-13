@@ -70,20 +70,18 @@ function LoginForm({ username, password, setUsername, setPassword, setIsSignUp, 
 	const handleLogin = (event) => {
     event.preventDefault();
     axios
-      .post(`${import.meta.env.VITE_API_URL}/api/v1/login`, {
-        user: { username, password },
-      })
-      .then((response) => {
+      .post(`${import.meta.env.VITE_API_URL}/api/v1/login`,
+        { user: { username, password } },
+        { headers: { 'Content-Type': 'application/json' } }
+      ).then((response) => {
         sessionStorage.setItem('token', response.data.token);
         sessionStorage.setItem('currentUser', JSON.stringify(response.data.user));
         navigate('/chats');
-      })
-      .catch((error) => {
+      }).catch((error) => {
         console.log(error);
         console.log(import.meta.env.VITE_API_URL)
         console.log('Login failed. Please check your credentials.');
       });
-
   };
 
   return (
@@ -103,21 +101,22 @@ function LoginForm({ username, password, setUsername, setPassword, setIsSignUp, 
 
 function SignUpForm({ username, email, password, passwordConfirmation, setPasswordConfirmation, setUsername, setEmail, setPassword, setIsSignUp, navigate }) {
 	const handleSignUp = (event) => {
-    event.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_API_URL}/api/v1/users`, {
-        user: { username, email, password, passwordConfirmation },
-      })
-      .then((response) => {
-				alert("User created");
-				setUsername('');
-				setEmail('');
-				setPassword('');
-				setPasswordConfirmation('');
-        navigate('/');
-      })
-      .catch((error) => console.log(error));
-  };
+  event.preventDefault();
+  axios
+    .post(`${import.meta.env.VITE_API_URL}/api/v1/users`,
+      { user: { username, email, password, passwordConfirmation } },
+      { headers: { 'Content-Type': 'application/json' } }
+    )
+    .then((response) => {
+      alert("User created");
+      setUsername('');
+      setEmail('');
+      setPassword('');
+      setPasswordConfirmation('');
+    })
+    .catch((error) => console.log(error));
+};
+
 
   return (
     <>
