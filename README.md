@@ -8,9 +8,9 @@
 
 A **real-time chat application** built with **React** (frontend) and **Ruby on Rails** (backend) leveraging **Action Cable/WebSocket** technology. This project demonstrates full-stack development expertise and modern real-time web application architecture.
 
-🌐 Live App — Hosted on Render free tier (server may take a few seconds to wake up).
+🌐 [Live App](https://your-app.onrender.com) — *Hosted on Render free tier (server may take a few seconds to wake up).*
 
-🎬 Watch Demo — See the real-time chat in action!
+🎬 [Watch Demo](https://youtu.be/22egid64hag) — *See the real-time chat in action!*
 
 ## 🚀 Project Overview
 
