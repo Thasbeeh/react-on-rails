@@ -8,7 +8,9 @@
 
 A **real-time chat application** built with **React** (frontend) and **Ruby on Rails** (backend) leveraging **Action Cable/WebSocket** technology. This project demonstrates full-stack development expertise and modern real-time web application architecture.
 
-Live at: <a href="https://example.com" target="_blank">Try it live!</a>
+[Live App](https://your-app.onrender.com) (Hosted on Render free tier — first load may take a few seconds while the server wakes up)
+
+[![Watch Demo](https://youtu.be/22egid64hag)
 
 ## 🚀 Project Overview
 
@@ -33,7 +35,7 @@ ReactOnRails showcases seamless integration between a React frontend and Rails A
 - **React Router** for client-side routing
 - **Axios** for API requests and HTTP client
 - **WebSocket API** for real-time communication
-- **Modern JavaScript (ES6+)** with arrow funcions
+- **Modern JavaScript (ES6+)** with arrow functions
 
 ### Backend  
 - **Ruby on Rails 7+** with API-first architecture
@@ -41,7 +43,6 @@ ReactOnRails showcases seamless integration between a React frontend and Rails A
 - **JWT (JSON Web Tokens)** for stateless authentication
 - **PostgreSQL** database with optimized schema design
 - **Active Record** with advanced query optimization
-- **Solid Cable** for persistent WebSocket message storage
 - **RSpec** for comprehensive backend testing
 
 ### Development & DevOps
@@ -143,66 +144,6 @@ react-on-rails/
 └── README.md                   # This file
 ```
 
-## 🏗 Architecture Highlights
-
-### API Design
-- **RESTful endpoints** with consistent JSON responses
-- **Namespaced routing** (`/api/v1/`) for versioning
-- **JWT authentication** across REST and WebSocket connections
-- **CORS configuration** for secure cross-origin requests
-
-### Real-time Architecture  
-- **Action Cable integration** for WebSocket management
-- **Channel subscription** system for targeted messaging
-- **Connection identification** for authenticated WebSocket sessions
-- **Broadcast mechanisms** for real-time message distribution
-- **Heartbeat implementation** for connection stability
-
-### Database Optimization
-- **Eager loading** to prevent N+1 query problems
-- **Query optimization** reducing response times significantly
-- **Migration patterns** for safe schema evolution
-
-## 🔧 Development Best Practices
-
-### Code Quality
-- **Modular component architecture** for maintainability
-- **Custom React hooks** for reusable logic
-- **Service layer pattern** for API interactions  
-- **Environment-based configuration** for different deployment stages
-- **Comprehensive error handling** and user feedback
-
-### Security  
-- **JWT token management** with proper expiration
-- **CORS policy configuration** for secure requests
-- **Input validation** and sanitization
-- **Authentication middleware** for protected routes
-- **Secure WebSocket connections** with user identification
-
-### Testing & Documentation
-- **RSpec test suite** for backend functionality
-- **API endpoint documentation** with request/response examples
-- **Git workflow** with feature branches and meaningful commits
-- **Code comments** explaining complex business logic
-
-## 🔮 Future Enhancements
-
-### Planned Features
-- **Group chat functionality** with multi-user conversations
-- **File and image sharing** with secure upload handling
-- **Push notifications** for offline message delivery  
-- **Message search and filtering** capabilities
-- **User status indicators** (online, away, busy)
-- **Message encryption** for enhanced privacy
-
-### Technical Improvements  
-- **Docker containerization** for easier deployment and development
-- **CI/CD pipeline** with automated testing and deployment
-- **Microservices architecture** for horizontal scaling
-- **GraphQL integration** for more efficient data fetching
-- **PWA capabilities** for mobile-like experience
-- **Internationalization (i18n)** for multi-language support
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
@@ -231,7 +172,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 - **Debugging and troubleshooting** skills across the full stack
 - **Code organization** and architectural decision-making
 - **Version control** and collaborative development workflows
-- **Testing strategies** and quality assurance practices
 - **Documentation** and technical communication skills
 
 ## 📄 License
