@@ -6,6 +6,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Load .env.production if it exists
+Dotenv.load(".env.production") if File.exist?(".env.production")
+
 module ReactOnRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
