@@ -6,6 +6,7 @@ import ShinyText from './animations/ShinyText';
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 
 export default function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -13,6 +14,10 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <ToastContainer
+        position="top-center" autoClose={4000} hideProgressBar newestOnTop={false}
+        closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="dark"
+      />
       <div className='row-container'>
         <div className="left-half">
           <img src={appLogo} alt="App Logo" />
@@ -62,7 +67,7 @@ function LoginForm({ setIsSignUp, navigate }) {
         sessionStorage.setItem('currentUser', JSON.stringify(response.data.user));
         navigate('/chats');
       }).catch((error) => {
-        console.log(error.response.data.error);
+        toast.error(error.response.data.error);
       });
   };
 
@@ -108,8 +113,7 @@ function SignUpForm({ setIsSignUp, navigate }) {
         { headers: { 'Content-Type': 'application/json' } }
       )
       .then((response) => {
-        debugger
-        alert(response.data.message);
+        toast.success(response.data.message);
         reset();
         setIsSignUp(false);
       })
