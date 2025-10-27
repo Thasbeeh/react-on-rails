@@ -82,10 +82,10 @@ function LoginForm({ setIsSignUp, navigate }) {
           <input type="password" placeholder="Password" {...register("password")}/>
           { errors.password && <small className='validation-messages'>{errors.password.message}</small> }
         </div>
-        <input type="submit" value="Login" className="primaryButtonColor"/>
+        <input type="submit" value="Login" className="primaryButtonColor login-form-container-button"/>
       </form>
       <hr />
-      <button className="secondaryButtonColor" onClick={() => setIsSignUp(true)}>Sign up</button>
+      <button className="secondaryButtonColor login-form-container-button" onClick={() => setIsSignUp(true)}>Sign up</button>
     </div>
   );
 }
@@ -141,10 +141,10 @@ function SignUpForm({ setIsSignUp, navigate }) {
           <input type="password" placeholder="Password Confirmation" {...register("passwordConfirmation")}/>
           { errors.passwordConfirmation && <small>{errors.passwordConfirmation.message}</small> }
         </div>
-        <input type="submit" value="Sign Up" className="primaryButtonColor"/>
+        <input type="submit" value="Sign Up" className="primaryButtonColor login-form-container-button"/>
       </form>
       <hr />
-      <button className="secondaryButtonColor" onClick={() => setIsSignUp(false)}>Login</button>
+      <button className="secondaryButtonColor login-form-container-button" onClick={() => setIsSignUp(false)}>Login</button>
     </div>
   );
 }
