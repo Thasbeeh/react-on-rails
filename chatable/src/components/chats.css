@@ -65,7 +65,7 @@
 }
 
 form {
-  margin-bottom: 10%;
+  margin-bottom: 7%;
 }
 
 form input {
@@ -98,7 +98,7 @@ form input:focus {
   align-items: flex-start;
 }
 
-.login-form-container button {
+.login-form-container-button {
   width: -webkit-fill-available;
   padding: 12px;
   border: none;
@@ -222,7 +222,7 @@ footer a {
     margin-top: 8%;
   }
 
-  .login-form-container button{
+  .login-form-container-button{
     padding: 5px;
     font-size: 0.7em;
   }
